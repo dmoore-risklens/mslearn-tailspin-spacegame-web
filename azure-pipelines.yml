@@ -17,9 +17,6 @@ stages:
     jobs:
       - job: "Prebuild"
         displayName: "Prebuild actions"
-        pool:
-          name: Azure Pipelines
-          vmImage: "ubuntu-18.04"
 
         steps:
           - powershell: write-output "Preparing to run builds"
@@ -28,10 +25,7 @@ stages:
       displayName: "Run any steps required before building the apps"
       jobs:
         - job: "Build"
-          displayName: "Prebuild actions"
-          pool:
-            name: Azure Pipelines
-            vmImage: "ubuntu-18.04"
+          displayName: "Build actions"
 
           steps:
           - template: templates/basicTemp.yml
