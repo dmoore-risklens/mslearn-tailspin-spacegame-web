@@ -1,8 +1,8 @@
 
 steps:
-- script: 'echo Test Test Test -------------'
+- script: 'echo parent param example: $(buildConfiguration) -------'
   displayName: 'Template Test ----------------'
-  
+
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
