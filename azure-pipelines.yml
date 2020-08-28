@@ -11,5 +11,27 @@ variables:
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '3.1.300'
 
-steps:
-- template: templates/basicTemp.yml
+stages:
+  - stage: "Prebuild"
+    displayName: "Run any steps required before building the apps"
+    jobs:
+      - job: "Prebuild"
+        displayName: "Prebuild actions"
+        pool:
+          name: Azure Pipelines
+          vmImage: "ubuntu-18.04"
+
+        steps:
+          - powershell: write-output "Preparing to run builds"
+
+  - stage: "Build"
+      displayName: "Run any steps required before building the apps"
+      jobs:
+        - job: "Build"
+          displayName: "Prebuild actions"
+          pool:
+            name: Azure Pipelines
+            vmImage: "ubuntu-18.04"
+
+          steps:
+          - template: templates/basicTemp.yml
