@@ -1,0 +1,4 @@
+
+steps:
+- script: 'echo parent param example: $(buildConfiguration) -------'
+  displayName: 'Build Example Test ----------------'
