@@ -19,13 +19,4 @@ stages:
         displayName: "Prebuild actions"
 
         steps:
-          - powershell: write-output "Preparing to run builds"
-
-  - stage: "Build"
-      displayName: "Run any steps required before building the apps"
-      jobs:
-        - job: "Build"
-          displayName: "Build actions"
-
-          steps:
           - template: templates/basicTemp.yml
