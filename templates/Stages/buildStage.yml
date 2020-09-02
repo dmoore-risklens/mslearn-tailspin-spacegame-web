@@ -1,7 +1,9 @@
-  
+parameters:
+  dependsOn: "Prebuild"
+
 stages:
   - stage: "Build"
-    displayName: "Run any steps required before building the apps"
+    displayName: "Run any steps required before building the apps ${{ parameters.dependsOn }}"
     jobs:
       - job: "Build"
         displayName: "Build actions"
