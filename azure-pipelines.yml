@@ -20,12 +20,5 @@ stages:
 
         steps:
           - template: templates/basicTemp.yml
-
-  - stage: "Build"
-    displayName: "Run any steps required before building the apps"
-    jobs:
-      - job: "Build"
-        displayName: "Build actions"
-
-        steps:
-          - template: templates/buildActionTemp.yml
+          
+  - template: templates/Stages/buildStage.yml
